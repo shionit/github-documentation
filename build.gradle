@@ -1,0 +1,7 @@
+plugins {
+    id 'ru.vyarus.mkdocs' version '1.0.1'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.9'
+}
