@@ -47,7 +47,7 @@ jobs:
       - save_cache:
           key: ghd-cache-build-{{ epoch }}
           paths:
-            - ~/ghd/build/mkdocs/
+            - ~/ghd
       # TODO: for Debug
       - store_artifacts:
           path: ~/ghd/build/mkdocs/
@@ -55,8 +55,6 @@ jobs:
   deploy:
     <<: *docker_config
     steps:
-      - restore_cache:
-          key: ghd-cache
       - restore_cache:
           key: ghd-cache-build
       - *restore_gradle_cache
