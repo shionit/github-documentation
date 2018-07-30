@@ -33,7 +33,6 @@ jobs:
             - ~/ghd
 
   build:
-    working_directory: ~/ghd
     <<: *docker_config
     steps:
       - restore_cache:
@@ -53,6 +52,14 @@ jobs:
       - store_artifacts:
           path: ~/ghd/build/mkdocs/
 
+  deploy:
+    <<: *docker_config
+    steps:
+      - restore_cache:
+          key: ghd-cache-build
+      - run:
+          command: ./gradlew mkdocksPublish
+
 workflows:
   version: 2
   build_and_deploy:
@@ -61,3 +68,9 @@ workflows:
       - build:
           requires:
             - checkout_code
+      - deploy:
+          # filters:
+          #   branches:
+          #     only: master
+          requires:
+            - build
