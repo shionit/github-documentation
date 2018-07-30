@@ -1,0 +1,49 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to MkDocs\n\u00b6\n\n\n\n\nmkdocs documentation\n.\n\n\nmkdocs-material documentation\n.\n\n\n\n\nProject layout\n\u00b6\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\n\n\nGradle tasks\n\u00b6\n\n\n\n\nmkdocsInit\n - Create new mkdocs site (like this).\n\n\nmkdocsBuild\n - Build the documentation site.\n\n\nmkdocsServe\n - Start the live-reloading docs server.\n\n\nmkdocsPublish\n - Publish generated site version to github pages.\n\n\n\n\nMkdocs native Commands\n\u00b6\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-mkdocs",
+            "text": "mkdocs documentation .  mkdocs-material documentation .",
+            "title": "Welcome to MkDocs"
+        },
+        {
+            "location": "/#project-layout",
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "title": "Project layout"
+        },
+        {
+            "location": "/#gradle-tasks",
+            "text": "mkdocsInit  - Create new mkdocs site (like this).  mkdocsBuild  - Build the documentation site.  mkdocsServe  - Start the live-reloading docs server.  mkdocsPublish  - Publish generated site version to github pages.",
+            "title": "Gradle tasks"
+        },
+        {
+            "location": "/#mkdocs-native-commands",
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.",
+            "title": "Mkdocs native Commands"
+        },
+        {
+            "location": "/guide/installation/",
+            "text": "Installation\n\u00b6\n\n\nTo install do...",
+            "title": "Installation"
+        },
+        {
+            "location": "/guide/installation/#installation",
+            "text": "To install do...",
+            "title": "Installation"
+        },
+        {
+            "location": "/about/history/",
+            "text": "1.0.0 (2017.11.01)\n\u00b6\n\n\n\n\nInitial release",
+            "title": "Release notes"
+        },
+        {
+            "location": "/about/history/#100-20171101",
+            "text": "Initial release",
+            "title": "1.0.0 (2017.11.01)"
+        }
+    ]
+}
