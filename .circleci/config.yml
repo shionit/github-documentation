@@ -56,7 +56,10 @@ jobs:
     <<: *docker_config
     steps:
       - restore_cache:
-          key: ghd-cache-build
+          key: |
+            - ghd-cache
+            - ghd-cache-build
+      - *restore_gradle_cache
       - run:
           command: ./gradlew mkdocksPublish
 
