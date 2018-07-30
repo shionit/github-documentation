@@ -3,7 +3,7 @@ version: 2
 references:
   ## Cache
   cache_key: &cache_gradle_key
-    key: ghd-gradle-{{ checksum "build.gradle" }}-{{ checksum "gradle.properties" }}
+    key: ghd-gradle-{{ checksum "build.gradle" }}
   restore_cache: &restore_gradle_cache
     restore_cache:
       <<: *cache_gradle_key
@@ -18,7 +18,7 @@ references:
   docker_config: &docker_config
     working_directory: ~/ghd
     docker:
-      - image: circleci/node:10.7.0
+      - image: classmethod/techdoc-ja:1.0.2
     environment:
       TERM: dumb
 
@@ -27,25 +27,24 @@ jobs:
     <<: *docker_config
     steps:
       - checkout
-      # save code
       - save_cache:
           key: ghd-cache-{{ epoch }}
           paths:
             - ~/ghd
-      # save dependencies
-      - *restore_gradle_cache
-      - run: ./gradlew dependencies
-      - *save_gradle_cache
 
   build:
+    working_directory: ~/ghd
     <<: *docker_config
     steps:
       - restore_cache:
           key: ghd-cache
       - *restore_gradle_cache
+      - run: pip -V || wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py
+      - run: pip install -U pip
       - run:
           name: Gradle build (Documents)
           command: ./gradlew mkdocsBuild
+      - *save_gradle_cache
       - save_cache:
           key: ghd-cache-build-{{ epoch }}
           paths:
