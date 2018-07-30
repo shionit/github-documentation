@@ -59,7 +59,7 @@ jobs:
           key: ghd-cache-build
       - *restore_gradle_cache
       - run:
-          command: ./gradlew mkdocksPublish
+          command: ./gradlew mkdocsPublish
 
 workflows:
   version: 2
